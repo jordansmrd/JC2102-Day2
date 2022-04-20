@@ -1,0 +1,25 @@
+<script>
+    //parkiran motor 
+    let duration = prompt('berapa lama anda parkir?')
+    let firstHour = 2000
+    let feePerHour = 1000
+    let maxFee = 25000
+    let total = 0
+
+    if (duration < 2) {
+        //durasi dibawah 2 jam
+        total = firstHour
+    }
+    else if (duration >= 2) {
+        //durasi diatas 2 jam 
+        total = firstHour + (feePerHour * (duration - 1))
+    }
+
+    if (total > maxFee) {
+        total = maxFee
+    }
+    alert('Total Harga yang harus anda bayar adalah Rp ' + total)
+
+
+
+</script>

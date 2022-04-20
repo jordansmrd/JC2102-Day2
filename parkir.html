@@ -1,0 +1,42 @@
+<script>
+    // parkir mobil
+    let firstHour
+    let feePerHour
+    let maxFee
+
+    let kendaraan = prompt('anda memakai kendaraan apa?\n 1. mobil \n 2. motor')
+    if (kendaraan == 1) {
+        //kendaraan mobil
+        firstHour = 4000
+        feePerHour = 3000
+        maxFee = 25000
+    }
+    else if (kendaraan == 2) {
+        //kendaraan motor
+        firstHour = 3000
+        feePerHour = 2000
+        maxFee = 20000
+    }
+    else {
+        alert('kendaraan tidak sesuai')
+    }
+
+    let duration = prompt('berapa jam anda parkir?')
+    let fee = 0
+
+
+    if (duration < 2 && parseFloat(duration) > 0.17) {
+        fee = firstHour
+    }
+    else if (duration >= 2 && duration) {
+        fee = firstHour + ((duration - 1) * feePerHour)
+    }
+
+    if (fee > maxFee) {
+        fee = maxFee
+    }
+
+    alert(`Biaya total parkir anda adalahn Rp.${fee}`)
+
+
+</script>
